@@ -1,0 +1,13 @@
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\bin\Debug\CashRegister.exe.config
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\bin\Debug\CashRegister.exe
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\bin\Debug\CashRegister.pdb
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\obj\Debug\CashRegister.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\obj\Debug\CashRegister.exe
+c:\users\david\documents\visual studio 2013\Projects\CashRegister\CashRegister\obj\Debug\CashRegister.pdb
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\bin\Debug\CashRegister.exe.config
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\bin\Debug\CashRegister.exe
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\bin\Debug\CashRegister.pdb
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.csprojResolveAssemblyReference.cache
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.csproj.CoreCompileInputs.cache
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.exe
+C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.pdb

@@ -10,7 +10,7 @@ using System.IO;
 // I could still put everything under one method to make me write just one line of code for each operation but i would find
 // difficulty in correcting errors
 
-
+    //hjälp vi ser grus
 namespace CashRegister
 {
     class Program

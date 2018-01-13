@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    sealed class Fruit : Item
+    public sealed class Fruit : Item
     {
         //Fruit class inherits from parent class item specifically for fruits
         //As a sealed class, no other class can inherit from it

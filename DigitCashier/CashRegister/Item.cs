@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CashRegister
 {
     //I created an Abstract Class and named it Item
-    abstract class Item
+    public abstract class Item
     {
         public string Name { get; set; }
         public int Price { get; set; }

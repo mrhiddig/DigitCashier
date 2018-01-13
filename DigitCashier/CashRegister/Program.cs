@@ -31,13 +31,13 @@ namespace CashRegister
         static void Main(string[] args)
         {
 
-                writeToTextFile.WriteLine("\nThanks for doing business with us \nHere's Your Receipt: \n\n");//First line written into the text file
-                writeToTextFile.WriteLine("Item   Quantity  Price   Total\n\n");
+            writeToTextFile.WriteLine("\nThanks for doing business with us \nHere's Your Receipt: \n\n");//First line written into the text file
+            writeToTextFile.WriteLine("Item   Quantity  Price   Total\n\n");
 
-                Fruit banana = new Fruit("Bananas", 2, 50, "Moos");
-                Fruit apple = new Fruit("Apples", 3, 62, "Toofah");
-                Fruit pineApple = new Fruit("Pineapples", 2, 100, "Ananas");
-                Fruit pear = new Fruit("Pears", 4, 72, "Ambarude");
+            Fruit banana = new Fruit("Bananas", 2, 50, "Moos");
+            Fruit apple = new Fruit("Apples", 3, 62, "Toofah");
+            Fruit pineApple = new Fruit("Pineapples", 2, 100, "Ananas");
+            Fruit pear = new Fruit("Pears", 4, 72, "Ambarude");
             Fruit orange = new Fruit("Oranges", 5, 93, "Lean");
             Fruit mango = new Fruit("Mangoes", 6, 90, "Ambe");
            
@@ -259,79 +259,7 @@ namespace CashRegister
             //throw new NotImplementedException();
         }
     }
-
-
-
-
-
-
-
-
-
-
-    //I created an Abstract Class and named it Item
-    abstract class Item
-    {
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public int Quantity { get; set; }
-        public int InStock { get; set; }
-        public int Total { get; set; }
-        public string ItemCode { get; set; }
-        public abstract string HowManyItemsOfChoice();
-        public abstract string Receipt();
-        //public abstract string PrintUserChoicesToTextFile();
-    }
-
-    sealed class Fruit : Item
-    {
-        //Fruit class inherits from parent class item specifically for fruits
-        //As a sealed class, no other class can inherit from it
-
-
-        public Fruit(string name, int price, int inStock, string itemCode)
-        {
-            //This block helps to neaten the code up by allowing you to put your values 
-            //In a bracket on a line for every new Fruit you wish to add
-
-            this.Name = name;
-            this.Price = price;
-            this.InStock = inStock;
-            this.ItemCode = itemCode;
-
-            this.Total = this.Price * this.Quantity;
-        }
-
-        public override string Receipt()
-        {
-            //Simply prints the user's current choice to screen in a conversational manner
-            //NOT THE FINAL RECEIPT THO...
-
-
-            this.Total = this.Price * this.Quantity;
-
-            string receiptMessage = String.Format("\n\n----- Item Code: {4} ----- \n{0} cost {1:C} a piece. \nSo {2} will cost you {3:C}. \nPress enter to advance", this.Name, this.Price, this.Quantity, this.Total, this.ItemCode);
-
-            return receiptMessage;
-            //throw new NotImplementedException();
-        }
-
-        public override string HowManyItemsOfChoice()
-        {
-            //Self explanatory
-
-            string itemOfChoiceMessage = String.Format("\n\nHow many {0} would you like to buy?  ", this.Name);
-            
-            return itemOfChoiceMessage;
-
-            //throw new NotImplementedException();
-        }
-
-
-        
-
-    }
-
+    
 }
 
 

@@ -11,3 +11,10 @@ C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\De
 C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.csproj.CoreCompileInputs.cache
 C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.exe
 C:\Users\Moham\Desktop\CashRegister\CashRegister-MainProgram\CashRegister\obj\Debug\CashRegister.pdb
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\bin\Debug\CashRegister.exe.config
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\bin\Debug\CashRegister.exe
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\bin\Debug\CashRegister.pdb
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\obj\Debug\CashRegister.csprojResolveAssemblyReference.cache
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\obj\Debug\CashRegister.csproj.CoreCompileInputs.cache
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\obj\Debug\CashRegister.exe
+C:\Users\Moham\Documents\GitHub\DigitCashier\DigitCashier\CashRegister\obj\Debug\CashRegister.pdb

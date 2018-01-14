@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    sealed class Fruit : Item
+    public sealed class Fruit : Item
     {
+        public new string Name { get; }
+        public new int Price { get; }
+        public new int InStock { get; }
+
+              public new int Quantity => quantity;
+
         //Fruit class inherits from parent class item specifically for fruits
         //As a sealed class, no other class can inherit from it
 
@@ -19,13 +25,20 @@ namespace CashRegister
 
             this.Name = name;
             this.Price = price;
-            this.InStock = inStock;
-            this.ItemCode = itemCode;
+            InStock = inStock;
+            NewMethod(itemCode);
 
             this.Total = this.Price * this.Quantity;
         }
 
-        public override string Receipt()
+       
+
+        private void NewMethod(string itemCode)
+        {
+            this.ItemCode = itemCode;
+        }
+
+        public new string Receipt()
         {
             //Simply prints the user's current choice to screen in a conversational manner
             //NOT THE FINAL RECEIPT THO...
@@ -39,19 +52,21 @@ namespace CashRegister
             //throw new NotImplementedException();
         }
 
-        public override string HowManyItemsOfChoice()
+        public new string HowManyItemsOfChoice
         {
-            //Self explanatory
+            get
+            {
+                //Self explanatory
 
-            string itemOfChoiceMessage = String.Format("\n\nHow many {0} would you like to buy?  ", this.Name);
+                string itemOfChoiceMessage = String.Format("\n\nHow many {0} would you like to buy?  ", this.Name);
 
-            return itemOfChoiceMessage;
+                return itemOfChoiceMessage;
 
-            //throw new NotImplementedException();
+                //throw new NotImplementedException();
+            }
         }
 
-
-
-
+        public string ItemCode { get; private set; }
+        public int quantity { get; private set; }
     }
 }

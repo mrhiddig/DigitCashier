@@ -27,6 +27,13 @@ namespace CashRegister
 
         //private static string x = "";
         private static StreamWriter writeToTextFile = new StreamWriter("Receipts.txt");
+
+        public static string Message { get => Message2; set => Message2 = value; }
+        public static string X { get => x; set => x = value; }
+        public static string Message1 { get => Message2; set => Message2 = value; }
+        public static string X1 { get => x; set => x = value; }
+        public static string Message2 { get => message; set => message = value; }
+
         //Streamwriter Writes every purchas to the text file Receipts. txt
         static void Main(string[] args)
         {
@@ -49,13 +56,13 @@ namespace CashRegister
 
                     if (length == 1)
                     {
-                        message = "Hello! What would you like to buy?   ";
+                        Message2 = "Hello! What would you like to buy?   ";
                     }
                     else if (length >= 1)
                     {
-                        message = "\nThanks for staying! What else would you like to buy?   ";
+                        Message2 = "\nThanks for staying! What else would you like to buy?   ";
                     }
-                    Console.Write(message);
+                    Console.Write(Message2);
                         //JUST FOR READABILITY SAKE.
                         //NOBODY LOVES A ONE WAY TELLER ;)
                     string userPurchaseValue = Console.ReadLine().ToUpper();
@@ -172,9 +179,14 @@ namespace CashRegister
             HowManyWho(item);
             GetUserInputForQuantity(item);
             writeToTextFile.WriteLine(PrintUserChoicesToTextFile(item));
+            Total(item);
+        }
+
+        private static void Total(Item item)
+        {
             grandTotal += item.Total;
         }
-        
+
         private static void ContinuePurchase()
         {
             //Simple message to find out if the user wants to buy anything else after each purchase attempt
@@ -227,19 +239,31 @@ namespace CashRegister
             //make sure there are enough items in stock before you embarrass yourself and your client as well
             int userInputForQuantity = int.Parse(Console.ReadLine());
             item.Quantity = userInputForQuantity;
-            if (item.Quantity > item.InStock)
+            if (item.Quantity > item.InStock) //Jag undrar en sak och det är om jag behöver extrahera denna iteration till Item.cs filen?
             {
-                Console.WriteLine("\nWe cannot give you the {0} {1} you requested\nbecause we have only {2} left in stock.\nWe are deeply sorry for any inconvenince caused.\n                                          Thank You!", item.Quantity, item.Name, item.InStock);
+                Rejection(item);
                 length -= 1;
             }
             else
             {
                 PrintReceipt(item);// Refer to printReceipt Method for clarity
             }
-            item.InStock -= item.Quantity;//Simply subtracts the quantity of items bought from the quantity in stock if purchase is successful
+            NewMethod(item);
 
             //throw new NotImplementedException();
         }
+
+        private static void Rejection(Item item)
+        {
+            Console.WriteLine("\nWe cannot give you the {0} {1} you requested\nbecause we have only {2} left in stock.\nWe are deeply sorry for any inconvenince caused.\n                                          Thank You!", item.Quantity, item.Name, item.InStock);
+        }
+
+        public static void NewMethod(Item item)
+        {
+            CheckItem(item);
+        }
+
+        public static void CheckItem(Item item) => item.InStock < item.Quantity;//Jag blev förvirrad här. Jag känner en blind spot härborta//Simply subtracts the quantity of items bought from the quantity in stock if purchase is successful
 
         private static void PrintReceipt(Item item)
         {
@@ -248,7 +272,7 @@ namespace CashRegister
 
         private static void HowManyWho(Item item)
         {
-            Console.Write(item.HowManyItemsOfChoice());// Refer to HowManyItemsOfChoice under fruit class.. 
+            Console.Write(value: item.HowManyItemsOfChoice());// Refer to HowManyItemsOfChoice under fruit class.. 
         }
 
         private static string PrintUserChoicesToTextFile(Item item)
@@ -263,13 +287,3 @@ namespace CashRegister
 }
 
 
-/*
- * FEEL FREE TO ADD TO 
- * OR MAKE RECOMMENDATIONS 
- * OR TWEAK MY CODE. I'D LOVE TO SEE
- * WHAT COMES OUT OF THIS BASIC CONSOLE APP
- * 
- * 
- * SINCERELY,
- * BARNABAS NOMO
- */

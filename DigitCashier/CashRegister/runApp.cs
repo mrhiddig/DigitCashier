@@ -10,10 +10,7 @@ namespace CashRegister
     class runApp
     {
         public static void Main(string[] args)
-        {
-            FileHandler fh = new FileHandler("Products.txt");
-            fh.addLine("Super_Product 1 0 yolo");
-            
+        {            
             String code;
             Program program;
 
@@ -27,7 +24,8 @@ namespace CashRegister
                 }
                 else if (code[0].Equals('3'))
                 {
-
+                    FileHandler fh = new FileHandler("Products.txt");
+                    fh.addLine("Super_Product 1 0 yolo");
                 }
                 else if (code[0].Equals('5'))
                 {

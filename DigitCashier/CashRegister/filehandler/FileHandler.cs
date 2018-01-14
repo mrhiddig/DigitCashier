@@ -21,7 +21,7 @@ namespace CashRegister.filehandler
         }
 
         public String[] read()
-        {
+        {   
             string[] lines = System.IO.File.ReadAllLines(@path);
             return lines;
         }

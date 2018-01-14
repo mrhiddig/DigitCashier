@@ -13,12 +13,11 @@ using System.IO;
     //hjälp vi ser grus
 namespace CashRegister
 {
-    class Program
+    public class Program
     {
         private static string message = "", x = "";
         //message and x and declared in this way because i needed to use them in other methods in this class
         
-
         private static int length = 1, grandTotal = 0;
         //length is used in the for loop in order to enable the user run the code or any number of times without closing
         //Grandtotal keeps record of the total of every item purchase you make and stores in memory till it's needed later
@@ -35,7 +34,8 @@ namespace CashRegister
         public static string Message2 { get => message; set => message = value; }
 
         //Streamwriter Writes every purchas to the text file Receipts. txt
-        static void Main(string[] args)
+
+        public Program()
         {
 
             writeToTextFile.WriteLine("\nThanks for doing business with us \nHere's Your Receipt: \n\n");//First line written into the text file
@@ -47,13 +47,11 @@ namespace CashRegister
             Fruit pear = new Fruit("Pears", 4, 72, "Ambarude");
             Fruit orange = new Fruit("Oranges", 5, 93, "Lean");
             Fruit mango = new Fruit("Mangoes", 6, 90, "Ambe");
-           
 
             for (int i = 0; i < length; i++)
+            {
+                try
                 {
-                    try
-                    {
-
                     if (length == 1)
                     {
                         Message2 = "Hello! What would you like to buy?   ";
@@ -62,15 +60,21 @@ namespace CashRegister
                     {
                         Message2 = "\nThanks for staying! What else would you like to buy?   ";
                     }
+<<<<<<< HEAD
                     Console.Write(Message2);
                         //JUST FOR READABILITY SAKE.
                         //NOBODY LOVES A ONE WAY TELLER ;)
+=======
+                    Console.Write(message);
+                    //JUST FOR READABILITY SAKE.
+                    //NOBODY LOVES A ONE WAY TELLER ;)
+>>>>>>> 3b6eed2b66f979f656112165a1c4451aa6743d50
                     string userPurchaseValue = Console.ReadLine().ToUpper();
 
-                    switch (userPurchaseValue) 
+                    switch (userPurchaseValue)
                     {
 
-                            //I PREFER SWITCH CASES OVER IF STATEMENTS IF SO MANY INSTANCES ARE TO BE GIVEN-- MOSTLY DEALING WITH USER INPUT
+                        //I PREFER SWITCH CASES OVER IF STATEMENTS IF SO MANY INSTANCES ARE TO BE GIVEN-- MOSTLY DEALING WITH USER INPUT
                         default:
                             Console.WriteLine("Sorry, we do not have {0} in stock yet", userPurchaseValue);
                             //i -= 1;
@@ -91,10 +95,10 @@ namespace CashRegister
 
                             //x = PrintUserChoicesToTextFile(banana);
                             // If Banana is chosen, current value of x which includes 
-                            
+
                             //grandTotal += banana.Total;//grandTotal Updated
 
-                            
+
 
                             break;
 
@@ -149,28 +153,21 @@ namespace CashRegister
                             //x = PrintUserChoicesToTextFile(orange);
                             //grandTotal += orange.Total;
                             break;
-
-
-
-
-
-
-                        
                     }
                     //writeToTextFile.WriteLine(x);//at the end of each loop write the current value for x into text file
                     Console.ReadLine();
                     ContinuePurchase();
 
 
-                    }
-                    catch (FormatException e)
-                    {
-                        Console.WriteLine("\n\n\n\n\n{0}\n\n\n\n", e.Message);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("\n\n\n\n\n{0}\n\n\n\n", e.Message);
 
-                        // THE ONLY RELEVANT EXCEPTION TYPE I FOUND NECESSARY TO USE AT THE MOMENT SINCE THAT'S PROBABLY THE MOST LIKELY OF ERRORS
+                    // THE ONLY RELEVANT EXCEPTION TYPE I FOUND NECESSARY TO USE AT THE MOMENT SINCE THAT'S PROBABLY THE MOST LIKELY OF ERRORS
 
-                        ContinuePurchase();
-                    }
+                    ContinuePurchase();
+                }
             }
         }
 
